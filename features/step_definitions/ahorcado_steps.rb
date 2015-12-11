@@ -6,8 +6,11 @@ Then(/^ver "(.*?)"$/) do |text|
   last_response.body.should =~ /#{text}/m
 end
 
-When(/^el jugador 1 hace un punto$/) do 
-	submit_form("punto1")
+When(/^adivino "(.*?)"$/) do |value|
+	fill_in "letterValue", :with => value
+  	submit_form("guess")
 end
+
+
 
 

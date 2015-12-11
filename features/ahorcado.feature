@@ -11,3 +11,7 @@ para divertirme
 		Given inicio la aplicacion
 		Then ver "P_TO"
 
+	Scenario: gana el juego
+		Given inicio la aplicacion
+		When adivino "A"
+		Then ver "YOU WIN"
