@@ -16,11 +16,11 @@
 </br>
 
 <% if @started %>
-<% if @resultado %>
-	&nbsp <h3>YOU WIN!</h3>
-<% else %>
- <img src="/img/07.jpg" />
-<% end %>
+	<% if @resultado %>
+		&nbsp <h3>YOU WIN!</h3>
+	<% else %>
+	 	<img src="/img/0<%=@numErrors%>.jpg" />
+	<% end %>
 <% end %>
 
 </body>
