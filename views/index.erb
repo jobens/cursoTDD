@@ -9,13 +9,19 @@
 <form action="/guess" method="post" id="guess">
 <input type="text" maxlength="1" id="letterValue" name="letterValue" />
 <input type="submit" value="Adivina!" />
-<br />
-<%= @resultado %>
+</form>
+<form action="/reset" method="post" id="reset">
+<input type="submit" value="Restart Game" />
+</form>
+</br>
+
+<% if @started %>
 <% if @resultado %>
 	&nbsp <h3>YOU WIN!</h3>
 <% else %>
  <img src="/img/07.jpg" />
 <% end %>
-</form>
+<% end %>
+
 </body>
 </html>

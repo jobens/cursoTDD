@@ -2,10 +2,19 @@ require 'sinatra'
 require './lib/Ahorcado'
 get '/' do
 	@word="P_TO"
+	@started=false
+	erb :index
+end
+
+
+post '/reset' do
+	@word="P_TO"
+	@started=false
 	erb :index
 end
 
 post '/guess' do
+	@started=true
 	result = params[:letterValue].upcase
 	puts params[:letterValue].upcase
 	puts result
