@@ -3,6 +3,7 @@ require './lib/Ahorcado'
 get '/' do
 	@@ahorcado = Ahorcado.new
 	@word=@@ahorcado.letrasAdivinadas
+	MAX_INTENTOS=7
 	erb :index
 end
 
@@ -17,9 +18,19 @@ post '/guess' do
 	else
 		@word="P_TO"
 	end
-	@started = true
-	@resultado = @@ahorcado.adivinoLetra result 
+	@started = false
+	@resultadoLetra = @@ahorcado.adivinoLetra result 
 	@word = @@ahorcado.letrasAdivinadas
+	@resultado = @@ahorcado.adivinoPalabra
+	@started = false
+	if @resultadoLetra == false
+		@started = true
+		@resultado = false
+		@numErrors = @@ahorcado.totalErrores
+	elsif @@ahorcado.adivinoPalabra
+		@started = true
+		@resultado = true
+	end
 	erb :index
 end
 

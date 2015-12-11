@@ -3,6 +3,7 @@ BANCOPALABRAS = ["PATO","AUTO","PAPEL","FELIZ","DINERO","ERROR","ADULTO","OJOS",
 class Ahorcado
 	def initialize
 		palabrasJuego BANCOPALABRAS[6]
+		@errores = 0
 	end
 	def getLetter(letter)
 		letter
@@ -32,7 +33,7 @@ class Ahorcado
 		arrayPalabra = palabra.split("")
 		@palabras = []
 		(0...arrayPalabra.length).each { |index|
-			@palabras[index]=[arrayPalabra[index],0]
+			@palabras[index]=[arrayPalabra[index],false]
 		}
 	end
 	
@@ -42,6 +43,8 @@ class Ahorcado
 			if @palabras[index][0] == letra
 				adivino = true
 				@palabras[index][1] = true
+			else
+				@errores += 1
 			end
 		}
 		adivino
@@ -57,5 +60,19 @@ class Ahorcado
 			end
 		}
 		letras
+	end
+
+	def adivinoPalabra
+		resultado = true
+		(0...@palabras.length).each { |index|
+			if @palabras[index][1] == false
+				resultado = false
+			end
+		}
+		resultado
+	end	
+
+	def totalErrores
+		@errores
 	end
 end
