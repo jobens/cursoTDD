@@ -7,9 +7,9 @@ para divertirme
 		Given inicio la aplicacion
 		Then ver "Ahorcado"
 
-	Scenario: inicia juego con palabra "P_TO"
+	Scenario: inicia juego con palabra "______"
 		Given inicio la aplicacion
-		Then ver "P_TO"
+		Then ver "______"
 
 	Scenario: gana el juego
 		Given inicio la aplicacion
