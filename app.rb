@@ -5,12 +5,13 @@ get '/' do
 end
 
 post '/guess' do
-	result = params[:letterValue]
-	puts params[:letterValue]
+	result = params[:letterValue].upcase
+	puts params[:letterValue].upcase
 	puts result
 	ahorcado = Ahorcado.new
 	validation = ahorcado.validarPalabra(result) 	
 	puts validation
+	@resultado = validation
 	erb :index
 end
 
