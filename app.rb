@@ -17,6 +17,7 @@ post '/guess' do
 	else
 		@word="P_TO"
 	end
+	@started = true
 	@resultado = @@ahorcado.adivinoLetra result 
 	@word = @@ahorcado.letrasAdivinadas
 	erb :index
