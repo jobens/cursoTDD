@@ -5,7 +5,9 @@ get '/' do
 end
 
 post '/guess' do
-	result = params[:guess]
+	result = params[:letterValue]
+	puts params[:letterValue]
+	puts result
 	ahorcado = Ahorcado.new
 	validation = ahorcado.validarPalabra(result) 	
 	puts validation
