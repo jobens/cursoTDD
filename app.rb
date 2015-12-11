@@ -23,3 +23,10 @@ post '/guess' do
 	erb :index
 end
 
+post '/reset' do
+	@@ahorcado = Ahorcado.new
+	@word=@@ahorcado.letrasAdivinadas
+	@started=false
+	erb :index
+end
+
