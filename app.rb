@@ -22,7 +22,6 @@ post '/guess' do
 	@resultadoLetra = @@ahorcado.adivinoLetra result 
 	@word = @@ahorcado.letrasAdivinadas
 	@resultado = @@ahorcado.adivinoPalabra
-	@started = false
 	if @resultadoLetra == false
 		@started = true
 		@resultado = false

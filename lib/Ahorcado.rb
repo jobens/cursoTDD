@@ -3,7 +3,7 @@ BANCOPALABRAS = ["PATO","AUTO","PAPEL","FELIZ","DINERO","ERROR","ADULTO","OJOS",
 class Ahorcado
 	def initialize
 		palabrasJuego BANCOPALABRAS[6]
-		@errores = 0
+		@errores = 0.to_i
 	end
 	def getLetter(letter)
 		letter
@@ -43,10 +43,11 @@ class Ahorcado
 			if @palabras[index][0] == letra
 				adivino = true
 				@palabras[index][1] = true
-			else
-				@errores += 1
 			end
 		}
+		if adivino == false
+			@errores += 1
+		end
 		adivino
 	end
 
