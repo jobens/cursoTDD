@@ -53,7 +53,7 @@ class Ahorcado
 			if @palabras[index][1] == true
 				letras += @palabras[index][0]
 			else
-				letras += "_"
+				letras += "_ "
 			end
 		}
 		letras

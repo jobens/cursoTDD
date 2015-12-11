@@ -31,7 +31,7 @@ describe "Ahorcado" do
 		ahorcado.palabrasJuego("carro")
 		ahorcado.adivinoLetra 'c'
 		letras = ahorcado.letrasAdivinadas
-		expect(letras).to eq("c____")
+		expect(letras).to eq("c_ _ _ _ ")
 	end
 	
 	it "Mostrar la letras adivinadas" do
@@ -40,7 +40,7 @@ describe "Ahorcado" do
 		ahorcado.adivinoLetra 'c'
 		ahorcado.adivinoLetra 'a'
 		letras = ahorcado.letrasAdivinadas
-		expect(letras).to eq("ca___")
+		expect(letras).to eq("ca_ _ _ ")
 	end
 	
 	it "Mostrar la letras adivinadas" do
@@ -48,7 +48,7 @@ describe "Ahorcado" do
 		ahorcado.palabrasJuego("carro")
 		ahorcado.adivinoLetra 'a'
 		letras = ahorcado.letrasAdivinadas
-		expect(letras).to eq("_a___")
+		expect(letras).to eq("_ a_ _ _ ")
 	end
 
 
