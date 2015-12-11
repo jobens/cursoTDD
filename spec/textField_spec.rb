@@ -1,4 +1,4 @@
-require './Ahorcado'
+require './lib/Ahorcado'
 
 describe "Ahorcado" do 
 	it "Retornar Letra" do
