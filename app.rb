@@ -1,7 +1,8 @@
 require 'sinatra'
 require './lib/Ahorcado'
 get '/' do
-	@word="P_TO"
+	@@ahorcado = Ahorcado.new
+	@word=@@ahorcado.letrasAdivinadas
 	erb :index
 end
 
@@ -9,15 +10,15 @@ post '/guess' do
 	result = params[:letterValue].upcase
 	puts params[:letterValue].upcase
 	puts result
-	ahorcado = Ahorcado.new
-	validation = ahorcado.validarPalabra(result) 	
+	validation = @@ahorcado.validarPalabra(result) 	
 	puts validation
 	if validation
 		@word="PATO"
 	else
 		@word="P_TO"
 	end
-	@resultado = validation
+	@resultado = @@ahorcado.adivinoLetra result 
+	@word = @@ahorcado.letrasAdivinadas
 	erb :index
 end
 
