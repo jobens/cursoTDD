@@ -9,7 +9,13 @@ describe "Ahorcado" do
 	
 	it "Validar palabra P_TO" do 
 		ahorcado = Ahorcado.new
+		result = ahorcado.validarPalabra("B")
+		expect(result).to eq(false)	
+	end 
+
+	it "Validar palabra P_TO" do 
+		ahorcado = Ahorcado.new
 		result = ahorcado.validarPalabra("A")
-		expect(result).to eq("")	
+		expect(result).to eq(true)	
 	end 
 end
