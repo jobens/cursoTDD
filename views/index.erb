@@ -4,7 +4,7 @@
 </header>
 <body>
 <div><h1>Ahorcado</h1></div>
-<div><label style="font-size:30px">P_TO</label></div>
+<div><label style="font-size:30px" id="word"><%= @word %></label></div>
 <br />
 <form action="/guess" method="post" id="guess">
 <input type="text" maxlength="1" id="letterValue" name="letterValue" />
